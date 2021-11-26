@@ -1,6 +1,6 @@
 :root {
     --primary-color: var(--ghost-accent-color, #2ec4b6);
-    --primary-text-color: #fff;
+    --primary-text-color: #333;
     --secondary-text-color: #aaa;
     --white-color: #fff;
     --light-gray-color: #f4f4f4;
@@ -51,7 +51,7 @@ h4,
 h5,
 h6 {
     margin: 0 0 15px;
-    color: var(--primary-text-color);
+    color: var(--dark-gray-color);
     font-family: var(--font-alt);
     line-height: 1.25;
     font-weight: 700;
@@ -59,7 +59,6 @@ h6 {
 
 p {
     margin: 0;
-    color:white !important;
 }
 
 img {
