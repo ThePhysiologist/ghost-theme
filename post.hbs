@@ -1,0 +1,51 @@
+{{!< default}}
+
+<div class="container">
+    <div class="row">
+        <div class="content-column col-lg-8{{#if @custom.show_sidebar_on_post}}{{#if @custom.show_related_posts}} col-lg-6{{/if}}{{/if}}{{#unless @custom.show_sidebar_on_post}}{{#unless @custom.show_related_posts}} shift{{/unless}}{{/unless}}">
+            <div class="content-area">
+                <main class="site-main">
+                    {{#post}}
+                        <article
+                            class="{{post_class}}{{#unless feature_image}} no-image{{/unless}} single u-shadow">
+                            {{> post-header tag="h1" hide_link=true}}
+                            <div class="post-meta">
+                                <time class="post-meta-date"
+                                    datetime="{{date format="YYYY-MM-DD"}}">
+                                    {{date published_at}}
+                                </time>
+                                <span
+                                    class="post-meta-length">{{reading_time}}</span>
+                            </div>
+                            {{> post-media with_caption=true}}
+                            <div class="post-wrapper">
+                                <div class="post-content gh-content">
+                                    {{content}}
+                                </div>
+                                {{> tags}}
+                                {{#if @custom.show_share_links}}
+                                    {{> share}}
+                                {{/if}}
+                            </div>
+                        </article>
+                        {{#if @custom.show_author}}
+                            {{> author}}
+                        {{/if}}
+                        {{> post-navigation}}
+                        {{> comment}}
+                    {{/post}}
+                </main>
+            </div>
+        </div>
+        {{#if @custom.show_related_posts}}
+            <div class="related-column {{#unless @custom.show_sidebar_on_post}}col-lg-4{{else}}col-lg-3{{/unless}} hidden-xs hidden-sm hidden-md">
+                {{> related}}
+            </div>
+        {{/if}}
+        {{#if @custom.show_sidebar_on_post}}
+            <div class="sidebar-column {{#unless @custom.show_related_posts}}col-lg-4{{else}}col-lg-3{{/unless}} hidden-xs hidden-sm hidden-md">
+                {{> widgets/widgets}}
+            </div>
+        {{/if}}
+    </div>
+</div>
