@@ -9,7 +9,7 @@
     --black-color: #000;
     --font-base: 'Poppins', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
     --font-serif: 'Inknut Antiqua', Times, serif;
-    --font-alt: Dosis, sans-serif;
+    --font-alt: 'Inknut Antiqua', sans-serif;
     --animation-base: ease-in-out;
     --shadow-base: 0 0 10px rgba(0, 0, 0, 0.02);
 }
@@ -59,6 +59,7 @@ h6 {
 
 p {
     margin: 0;
+    font-weight:200;
 }
 
 img {
